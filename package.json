@@ -1,0 +1,18 @@
+{
+  "name": "rangecfg",
+  "version": "0.1.0",
+  "description": "Load KEY=VALUE config, validate against a schema, and render paginated numeric reports.",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "rangecfg": "src/cli.js"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.js'",
+    "start": "node src/cli.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
