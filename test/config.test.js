@@ -39,6 +39,11 @@ test("parseConfig: nullish input returns empty object", () => {
   assert.deepEqual(parseConfig(""), {});
 });
 
+test("parseConfig: nullish input does not throw TypeError (regression for #2)", () => {
+  assert.doesNotThrow(() => parseConfig(null));
+  assert.doesNotThrow(() => parseConfig(undefined));
+});
+
 test("mergeConfig: right-hand wins on conflict", () => {
   const merged = mergeConfig({ A: "1", B: "2" }, { B: "3", C: "4" });
   assert.deepEqual(merged, { A: "1", B: "3", C: "4" });
