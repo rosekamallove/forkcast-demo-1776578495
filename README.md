@@ -1,6 +1,6 @@
 # rangecfg
 
-A tiny Node utility that loads a KEY=VALUE config file, validates it against a schema, and renders paginated numeric reports. Used as teh reference harness for the ForkCast hackathon demo.
+A tiny Node utility that loads a KEY=VALUE config file, validates it against a schema, and renders paginated numeric reports. Used as the reference harness for the ForkCast hackathon demo.
 
 ## Install
 
