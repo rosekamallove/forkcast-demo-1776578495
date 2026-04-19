@@ -12,7 +12,7 @@ export function sumRange(start, end) {
   }
   if (end < start) return 0;
   let total = 0;
-  for (let i = start; i < end; i++) {
+  for (let i = start; i <= end; i++) {
     total += i;
   }
   return total;
