@@ -18,6 +18,11 @@ test("sumRange: empty range when end < start is 0", () => {
   assert.equal(sumRange(7, 3), 0);
 });
 
+test("sumRange: regression — end is inclusive (Gauss formula n=100)", () => {
+  // If `end` were excluded (the original bug), this would be 4950.
+  assert.equal(sumRange(1, 100), 5050);
+});
+
 test("sumRange: rejects non-integer bounds", () => {
   assert.throws(() => sumRange(1.5, 3), TypeError);
 });
