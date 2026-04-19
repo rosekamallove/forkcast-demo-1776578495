@@ -18,6 +18,11 @@ test("sumRange: empty range when end < start is 0", () => {
   assert.equal(sumRange(7, 3), 0);
 });
 
+test("sumRange: regression - end bound is inclusive (2..4 equals 9)", () => {
+  // Guards against the off-by-one bug where the loop used `i < end`.
+  assert.equal(sumRange(2, 4), 2 + 3 + 4);
+});
+
 test("sumRange: rejects non-integer bounds", () => {
   assert.throws(() => sumRange(1.5, 3), TypeError);
 });
