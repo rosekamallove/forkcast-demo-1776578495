@@ -12,6 +12,7 @@ import { ConfigError } from "./errors.js";
  */
 export function parseConfig(text) {
   const out = {};
+  if (text == null || text === "") return out;
   const lines = text.split(/\r?\n/);
   for (let i = 0; i < lines.length; i++) {
     const raw = lines[i];
