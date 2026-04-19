@@ -18,6 +18,14 @@ test("sumRange: empty range when end < start is 0", () => {
   assert.equal(sumRange(7, 3), 0);
 });
 
+// Regression test: `end` must be inclusive (previously off-by-one excluded it).
+test("sumRange: end is inclusive (regression for off-by-one)", () => {
+  // n*(n+1)/2 for n=100 is 5050
+  assert.equal(sumRange(1, 100), 5050);
+  // range that does not start at 1
+  assert.equal(sumRange(3, 6), 3 + 4 + 5 + 6);
+});
+
 test("sumRange: rejects non-integer bounds", () => {
   assert.throws(() => sumRange(1.5, 3), TypeError);
 });
